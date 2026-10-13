@@ -38,10 +38,11 @@ needed to track a wavefunction across a crossing. This is grounded directly in
 Anselmetti et al.'s result ([NJP 23, 113010 (2021)](https://arxiv.org/abs/2104.05695))
 that pair-exchange-only and orbital-rotation-only ansätze are each individually
 non-universal, while their combination is. Adding single (orbital-rotation)
-excitations to PUCCD resolved the catastrophic failures by up to **446x**
-(0.69 Ha -> 1.8e-5 Ha) and brought **36 of 37** previously-failing geometries in two
+excitations to PUCCD resolved the catastrophic failures by up to **~38,766x**
+(0.69 Ha -> 1.8e-5 Ha, HF) and brought **36 of 37** previously-failing geometries in two
 of the three affected molecules to chemical accuracy; the third (BH) improved at
-every one of 18 geometries tested, with a smaller residual gap.
+every one of 18 geometries tested (up to 446x at its best point, 0.47 Ha -> 0.0011 Ha),
+with a smaller residual gap.
 
 This fix is currently validated only in noiseless simulation.
 
