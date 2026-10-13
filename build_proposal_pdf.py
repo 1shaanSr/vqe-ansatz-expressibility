@@ -84,7 +84,7 @@ story.append(Paragraph(
 
 story.append(Paragraph("2.1 Long-running background job orchestration", styles["H2"]))
 story.append(Paragraph(
-    "The full study spans 90+ bond-length geometries across 5 molecules, each requiring a multi-restart "
+    "The full study spans 87 bond-length geometries across 5 molecules, each requiring a multi-restart "
     "classical optimization (up to 12 restarts &times; 250 iterations per geometry). Individual runs took "
     "minutes to hours depending on system load, with highly variable per-point timing (observed range: "
     "~150 seconds to over 2 hours for a single geometry under heavy system contention). The agent launched "

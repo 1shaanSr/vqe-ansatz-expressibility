@@ -9,7 +9,7 @@ mechanistic explanation for both, and an architectural fix validated to resolve 
 Using a Hartree-Fock-initialized **PUCCD** ansatz (paired unitary coupled-cluster
 doubles) with warm-started multi-restart classical optimization, we scanned the full
 potential energy surface of **H2, LiH, BeH2, HF, and BH** (4-12 qubits, STO-3G basis)
-across 90+ bond-length geometries, partly verified on real IBM Quantum hardware
+across 87 bond-length geometries, partly verified on real IBM Quantum hardware
 (`ibm_kingston`).
 
 **Two distinct failure modes emerged:**
