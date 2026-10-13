@@ -1,0 +1,30 @@
+[
+  {
+    "molecule": "HF",
+    "r": 2.534,
+    "exact": -98.45464441546059,
+    "puccd_only_error": 0.6315410103427155,
+    "puccd_plus_rotation_error": 0.0012640048945797844
+  },
+  {
+    "molecule": "HF",
+    "r": 3.5,
+    "exact": -98.45310620499494,
+    "puccd_only_error": 0.6885858373432683,
+    "puccd_plus_rotation_error": 1.7543570763223215e-05
+  },
+  {
+    "molecule": "BH",
+    "r": 3.221,
+    "exact": -24.6574899731361,
+    "puccd_only_error": 0.2779655509052503,
+    "puccd_plus_rotation_error": 0.0025392583620416076
+  },
+  {
+    "molecule": "BH",
+    "r": 3.5,
+    "exact": -24.656147938096435,
+    "puccd_only_error": 0.47014963345731076,
+    "puccd_plus_rotation_error": 0.0008957918390954944
+  }
+]

@@ -1,0 +1,166 @@
+{
+  "LiH_rotation": {
+    "points": [
+      {
+        "r": 1.0,
+        "num_qubits": 10,
+        "exact_energy": -7.784021320448157,
+        "exact_dipole_mag": 1.8595510485997038,
+        "sim_energy": -7.783943286544586,
+        "sim_dipole_mag": 1.8689900366826104
+      },
+      {
+        "r": 1.5998,
+        "num_qubits": 10,
+        "exact_energy": -7.882099852976216,
+        "exact_dipole_mag": 1.8180622621616611,
+        "sim_energy": -7.882033312402529,
+        "sim_dipole_mag": 1.8267225838672594
+      },
+      {
+        "r": 1.8,
+        "num_qubits": 10,
+        "exact_energy": -7.87428003393395,
+        "exact_dipole_mag": 1.8011550320035634,
+        "sim_energy": -7.874267969547486,
+        "sim_dipole_mag": 1.7925929478080216
+      },
+      {
+        "r": 2.158,
+        "num_qubits": 10,
+        "exact_energy": -7.848681377374232,
+        "exact_dipole_mag": 1.704363255733801,
+        "sim_energy": -7.848677490419299,
+        "sim_dipole_mag": 1.6988670757277744
+      },
+      {
+        "r": 2.34,
+        "num_qubits": 10,
+        "exact_energy": -7.8347251035854635,
+        "exact_dipole_mag": 1.5899314937223394,
+        "sim_energy": -7.834724462098876,
+        "sim_dipole_mag": 1.5918530313388075
+      },
+      {
+        "r": 2.4722,
+        "num_qubits": 10,
+        "exact_energy": -7.825295334018759,
+        "exact_dipole_mag": 1.4690509794229651,
+        "sim_energy": -7.825291765180697,
+        "sim_dipole_mag": 1.4711279669320092
+      },
+      {
+        "r": 2.5818,
+        "num_qubits": 10,
+        "exact_energy": -7.818199358114451,
+        "exact_dipole_mag": 1.3451044320686254,
+        "sim_energy": -7.8181923718743676,
+        "sim_dipole_mag": 1.3558449618465411
+      },
+      {
+        "r": 2.6,
+        "num_qubits": 10,
+        "exact_energy": -7.81709420949411,
+        "exact_dipole_mag": 1.3226988663170882,
+        "sim_energy": -7.81708722915802,
+        "sim_dipole_mag": 1.3368841592155392
+      },
+      {
+        "r": 2.6815,
+        "num_qubits": 10,
+        "exact_energy": -7.812418436108812,
+        "exact_dipole_mag": 1.2172879612970178,
+        "sim_energy": -7.812409340461244,
+        "sim_dipole_mag": 1.2409153302791327
+      },
+      {
+        "r": 2.7781,
+        "num_qubits": 10,
+        "exact_energy": -7.807471065353955,
+        "exact_dipole_mag": 1.0849482361628064,
+        "sim_energy": -7.807460344081971,
+        "sim_dipole_mag": 1.1185134562555772
+      },
+      {
+        "r": 2.8755,
+        "num_qubits": 10,
+        "exact_energy": -7.803136427456152,
+        "exact_dipole_mag": 0.9491445696266974,
+        "sim_energy": -7.803135027312356,
+        "sim_dipole_mag": 0.9483026967016119
+      },
+      {
+        "r": 2.9776,
+        "num_qubits": 10,
+        "exact_energy": -7.799266340914961,
+        "exact_dipole_mag": 0.8107752530883419,
+        "sim_energy": -7.799264386053188,
+        "sim_dipole_mag": 0.8111639521727485
+      },
+      {
+        "r": 3.0903,
+        "num_qubits": 10,
+        "exact_energy": -7.795725687553882,
+        "exact_dipole_mag": 0.6693652630693103,
+        "sim_energy": -7.79569968221964,
+        "sim_dipole_mag": 0.6819400155682164
+      },
+      {
+        "r": 3.2221,
+        "num_qubits": 10,
+        "exact_energy": -7.792429589767554,
+        "exact_dipole_mag": 0.5249751959372464,
+        "sim_energy": -7.792317292373775,
+        "sim_dipole_mag": 0.5570888666896029
+      },
+      {
+        "r": 3.3866,
+        "num_qubits": 10,
+        "exact_energy": -7.789353581279871,
+        "exact_dipole_mag": 0.3796837696586426,
+        "sim_energy": -7.789032233534717,
+        "sim_dipole_mag": 0.48368921509314544
+      },
+      {
+        "r": 3.4,
+        "num_qubits": 10,
+        "exact_energy": -7.789145387260311,
+        "exact_dipole_mag": 0.36950674823259444,
+        "sim_energy": -7.788803668184428,
+        "sim_dipole_mag": 0.4791826176467085
+      },
+      {
+        "r": 3.6275,
+        "num_qubits": 10,
+        "exact_energy": -7.786368945538576,
+        "exact_dipole_mag": 0.23002532922327656,
+        "sim_energy": -7.785665349966009,
+        "sim_dipole_mag": 0.4475063501231922
+      },
+      {
+        "r": 4.1711,
+        "num_qubits": 10,
+        "exact_energy": -7.783326443651642,
+        "exact_dipole_mag": 0.06985324557149397,
+        "sim_energy": -7.782587560756753,
+        "sim_dipole_mag": 0.008177577356641067
+      },
+      {
+        "r": 4.2,
+        "num_qubits": 10,
+        "exact_energy": -7.7832452207276,
+        "exact_dipole_mag": 0.0654616793743994,
+        "sim_energy": -7.782555528257818,
+        "sim_dipole_mag": 0.012185177275336677
+      },
+      {
+        "r": 5.0,
+        "num_qubits": 10,
+        "exact_energy": -7.782258387107077,
+        "exact_dipole_mag": 0.009208123007050872,
+        "sim_energy": -7.782248633899092,
+        "sim_dipole_mag": 0.020510944249457555
+      }
+    ]
+  }
+}

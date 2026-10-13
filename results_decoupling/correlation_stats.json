@@ -1,0 +1,61 @@
+{
+  "pooled_raw_pearson_r": 0.9098962663652661,
+  "pooled_raw_pearson_p": 3.129059771348036e-34,
+  "per_molecule_log_log": {
+    "H2": {
+      "log_log_pearson_r": -0.10091151913749792,
+      "log_log_pearson_p_naive": 0.7204645226774467,
+      "n_raw": 15,
+      "n_effective_autocorr_corrected": 15.0,
+      "log_log_pearson_p_corrected": 0.7204645226774469,
+      "spearman_r": -0.11903200522119638,
+      "spearman_p": 0.6726438683819937,
+      "likely_outlier_driven_correlation": false,
+      "dipole_dynamic_range_au": 1.0658141036401503e-14
+    },
+    "LiH": {
+      "log_log_pearson_r": 0.789977641271899,
+      "log_log_pearson_p_naive": 3.422813399550337e-05,
+      "n_raw": 20,
+      "n_effective_autocorr_corrected": 6.965075038280012,
+      "log_log_pearson_p_corrected": 0.03524213375095675,
+      "spearman_r": 0.7112781954887217,
+      "spearman_p": 0.00043769852641296046,
+      "likely_outlier_driven_correlation": false,
+      "dipole_dynamic_range_au": 0.9669325448667085
+    },
+    "BeH2": {
+      "log_log_pearson_r": -0.03692808362474695,
+      "log_log_pearson_p_naive": 0.888100702807501,
+      "n_raw": 17,
+      "n_effective_autocorr_corrected": 17.0,
+      "log_log_pearson_p_corrected": 0.8881007028075014,
+      "spearman_r": -0.08088235294117649,
+      "spearman_p": 0.7576329086921563,
+      "likely_outlier_driven_correlation": false,
+      "dipole_dynamic_range_au": 4.013592672253236e-16
+    },
+    "HF": {
+      "log_log_pearson_r": 0.9074271568244776,
+      "log_log_pearson_p_naive": 4.960234153072417e-07,
+      "n_raw": 17,
+      "n_effective_autocorr_corrected": 11.852286500406985,
+      "log_log_pearson_p_corrected": 5.236656273410745e-05,
+      "spearman_r": -0.09558823529411767,
+      "spearman_p": 0.7151579154299805,
+      "likely_outlier_driven_correlation": true,
+      "dipole_dynamic_range_au": 6.600023314737239
+    },
+    "BH": {
+      "log_log_pearson_r": 0.7528413352141682,
+      "log_log_pearson_p_naive": 0.0003113047032992916,
+      "n_raw": 18,
+      "n_effective_autocorr_corrected": 10.688725667830251,
+      "log_log_pearson_p_corrected": 0.008662746172232172,
+      "spearman_r": 0.3519091847265222,
+      "spearman_p": 0.15210693918997698,
+      "likely_outlier_driven_correlation": true,
+      "dipole_dynamic_range_au": 6.8001987108195205
+    }
+  }
+}
