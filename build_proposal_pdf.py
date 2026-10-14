@@ -8,11 +8,12 @@ from reportlab.lib.units import inch
 from reportlab.lib import colors
 from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
 from reportlab.platypus import (
-    SimpleDocTemplate, Paragraph, Spacer, PageBreak, Table, TableStyle, ListFlowable, ListItem
+    SimpleDocTemplate, Paragraph, Spacer, PageBreak, Table, TableStyle, ListFlowable, ListItem, Image
 )
 from reportlab.lib.enums import TA_LEFT, TA_CENTER
 
 OUT = "Quantum_Flywheel_AI_Orchestration_Prototype.pdf"
+FIG_DIR = "results_decoupling/figures_proposal"
 
 styles = getSampleStyleSheet()
 styles.add(ParagraphStyle("TitleBig", parent=styles["Title"], fontSize=17, leading=21, spaceAfter=4))
@@ -72,7 +73,6 @@ story.append(Paragraph(
     "reach with today's NISQ devices under realistic access constraints.",
     styles["Body"]))
 
-story.append(PageBreak())
 
 # ============================================================== PAGE 2
 story.append(Paragraph("2. The AI-orchestration workflow (the \"how\")", styles["H1"]))
@@ -117,7 +117,6 @@ story.append(Paragraph(
     "glossed over.",
     styles["Body"]))
 
-story.append(PageBreak())
 
 # ============================================================== PAGE 3
 story.append(Paragraph("3. The scientific result this process produced (the \"what\")", styles["H1"]))
@@ -134,6 +133,9 @@ story.append(Paragraph(
     "no VQE run at all &mdash; explains why: HF and BH each undergo a genuine electronic-structure curve "
     "crossing at essentially the bond length where PUCCD fails; LiH does not.",
     styles["Body"]))
+story.append(Spacer(1, 4))
+story.append(Image(f"{FIG_DIR}/multireference_mechanism.png", width=4.3*inch, height=4.3*inch/1.781))
+story.append(Spacer(1, 6))
 
 story.append(Paragraph("3.2 A validated architectural fix", styles["H2"]))
 story.append(Paragraph(
@@ -146,6 +148,8 @@ story.append(Paragraph(
     styles["Body"]))
 
 story.append(Spacer(1, 4))
+story.append(Image(f"{FIG_DIR}/error_reduction_summary.png", width=6.7*inch, height=6.7*inch/3.103))
+story.append(Spacer(1, 2))
 table_data = [
     [Paragraph("Molecule", styles["TableHead"]), Paragraph("Geometries tested", styles["TableHead"]),
      Paragraph("Reached chemical accuracy", styles["TableHead"]), Paragraph("Max error reduction", styles["TableHead"])],
@@ -161,8 +165,8 @@ t.setStyle(TableStyle([
     ("BACKGROUND", (0, 0), (-1, 0), colors.HexColor("#2b2b2b")),
     ("GRID", (0, 0), (-1, -1), 0.5, colors.HexColor("#999999")),
     ("VALIGN", (0, 0), (-1, -1), "MIDDLE"),
-    ("TOPPADDING", (0, 0), (-1, -1), 5),
-    ("BOTTOMPADDING", (0, 0), (-1, -1), 5),
+    ("TOPPADDING", (0, 0), (-1, -1), 3),
+    ("BOTTOMPADDING", (0, 0), (-1, -1), 3),
     ("ROWBACKGROUNDS", (0, 1), (-1, -1), [colors.white, colors.HexColor("#f2f2f2")]),
 ]))
 story.append(t)
@@ -182,7 +186,6 @@ story.append(Paragraph(
     "energies use the best of twelve restarts to control for this.",
     styles["Body"]))
 
-story.append(PageBreak())
 
 # ============================================================== PAGE 4
 story.append(Paragraph("4. Proposed extension using Quantum Flywheel resources", styles["H1"]))
