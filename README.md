@@ -9,8 +9,8 @@ mechanistic explanation for both, and an architectural fix validated to resolve 
 Using a Hartree-Fock-initialized **PUCCD** ansatz (paired unitary coupled-cluster
 doubles) with warm-started multi-restart classical optimization, we scanned the full
 potential energy surface of **H2, LiH, BeH2, HF, and BH** (4-12 qubits, STO-3G basis)
-across 87 bond-length geometries, partly verified on real IBM Quantum hardware
-(`ibm_kingston`).
+across 87 bond-length geometries, in noiseless classical simulation. Hardware
+verification (`ibm_kingston`) is planned as a deliberately separate, later step.
 
 **Two distinct failure modes emerged:**
 - **LiH** degrades *gradually* as the bond stretches (Spearman r=0.71 between energy
@@ -19,11 +19,13 @@ across 87 bond-length geometries, partly verified on real IBM Quantum hardware
 - **HF and BH** instead track the exact answer closely, then undergo a sharp,
   localized collapse at a specific bond length.
 
-**We ruled out insufficient optimization as the cause.** At the worst-affected
+**We ruled out insufficient optimization as the cause.** At HF's worst-affected
 geometries, 12 independent optimizer restarts — from both random and warm-started
 initial points — converge to the *identical* energy to within 1e-6 Ha, regardless
 of starting point. This is a genuine ansatz expressibility ceiling, not an
-under-optimized run.
+under-optimized run. BH and LiH show a rougher multi-restart landscape at a subset
+of geometries (spreads up to roughly 1 Ha near BH's curve crossing); all reported
+energies use the best of twelve restarts to control for this.
 
 **We explained the dichotomy with a purely classical diagnostic.** Computing the
 weight of the Hartree-Fock determinant in the *exact* (FCI) wavefunction across the

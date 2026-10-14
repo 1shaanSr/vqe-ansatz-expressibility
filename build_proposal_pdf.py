@@ -40,7 +40,7 @@ story.append(Paragraph(
     "A real, reproducible worked example of using an AI agent (Claude, via Claude Code) to orchestrate "
     "a multi-week, compute-heavy quantum chemistry research workflow &mdash; submitted as the "
     "optional prototype for Track 1 (AI for Quantum Advantage on NISQ Hardware). "
-    "Code and full results: <font face=\"Courier\">github.com/1shaanSr/vqe-ansatz-expressibility</font>",
+    "Code and full results: <font face=\"Courier\">https://github.com/1shaanSr/vqe-ansatz-expressibility</font>",
     styles["Subtitle"]))
 
 story.append(Paragraph("What this document is", styles["H1"]))
@@ -64,12 +64,12 @@ story.append(Paragraph(
 
 story.append(Paragraph("2. Why this fits Track 1", styles["H1"]))
 story.append(Paragraph(
-    "The project already includes a real IBM Quantum hardware run (backend <font face=\"Courier\">ibm_kingston</font>) "
-    "using a single-batched-job strategy designed specifically to stay within free-tier QPU-time limits "
-    "(all classical optimization performed in simulation; hardware used exactly once, for final verification). "
-    "The proposed extension (Section 4) scales that same strategy to validate a newly-discovered ansatz fix "
-    "on real hardware across full molecular curves &mdash; a direct, concrete push toward results that are "
-    "harder to reach with today's NISQ devices under realistic access constraints.",
+    "Everything in this project to date, including the ansatz fix in Section 3, has been validated only in "
+    "noiseless classical simulation; no run has yet been submitted to real quantum hardware. The proposed "
+    "extension (Section 4) is designed around a single-batched-job execution strategy chosen specifically to "
+    "stay within free-tier QPU-time limits (all classical optimization performed in simulation; hardware "
+    "used only for final verification) &mdash; a direct, concrete push toward results that are harder to "
+    "reach with today's NISQ devices under realistic access constraints.",
     styles["Body"]))
 
 story.append(PageBreak())
@@ -150,9 +150,9 @@ table_data = [
     [Paragraph("Molecule", styles["TableHead"]), Paragraph("Geometries tested", styles["TableHead"]),
      Paragraph("Reached chemical accuracy", styles["TableHead"]), Paragraph("Max error reduction", styles["TableHead"])],
     [Paragraph("HF", styles["TableCell"]), Paragraph("17", styles["TableCell"]),
-     Paragraph("16 / 17 (was 0 / 17)", styles["TableCell"]), Paragraph("~38,000x", styles["TableCell"])],
+     Paragraph("16 / 17 (was 0 / 17)", styles["TableCell"]), Paragraph("~38,766x", styles["TableCell"])],
     [Paragraph("LiH", styles["TableCell"]), Paragraph("20", styles["TableCell"]),
-     Paragraph("20 / 20 (was 0 / 20)", styles["TableCell"]), Paragraph("~29,000x", styles["TableCell"])],
+     Paragraph("20 / 20 (was 0 / 20)", styles["TableCell"]), Paragraph("~28,943x", styles["TableCell"])],
     [Paragraph("BH", styles["TableCell"]), Paragraph("18", styles["TableCell"]),
      Paragraph("1 / 18, every point improved", styles["TableCell"]), Paragraph("446x", styles["TableCell"])],
 ]
@@ -175,9 +175,11 @@ story.append(Paragraph(
 story.append(Paragraph("3.3 Ruling out the obvious alternative explanation", styles["H2"]))
 story.append(Paragraph(
     "Before attributing the original failures to the ansatz, insufficient optimization was explicitly ruled "
-    "out: at the worst-affected geometries, 12 independent restarts (random and warm-started) converged to "
+    "out: at HF's worst-affected geometries, 12 independent restarts (random and warm-started) converged to "
     "the identical energy to within 1&times;10<super>-6</super> Ha regardless of starting point &mdash; a "
-    "genuine expressibility ceiling, not an under-optimized run.",
+    "genuine expressibility ceiling, not an under-optimized run. BH and LiH show a rougher multi-restart "
+    "landscape at a subset of geometries (spreads up to roughly 1 Ha near BH's curve crossing); all reported "
+    "energies use the best of twelve restarts to control for this.",
     styles["Body"]))
 
 story.append(PageBreak())
@@ -191,17 +193,27 @@ story.append(Paragraph(
     styles["Body"]))
 
 bullets = [
-    ("Month 1 &mdash; QPU access.", "Validate the orbital-rotation-augmented ansatz on real IBM hardware "
-     "across full molecular curves, using the same single-batched-job strategy already proven in this "
-     "project's prior hardware run, to stay within QPU-time budget."),
-    ("Month 2 &mdash; cloud compute.", "Extend to additional molecules and larger active spaces to test how "
-     "far the fix generalizes, and investigate BH's residual gap (Section 3.2) &mdash; testing whether a "
-     "complementary correction (e.g. a neural-network amplitude correction in the style of Li et al., 2025) "
-     "closes it."),
-    ("Month 3 &mdash; AI-agent-orchestrated search.", "Rather than hand-selecting which additional excitation "
-     "operators to test, use AI-agent-driven search over the remaining excitation space &mdash; proposing "
-     "candidate ansatz modifications, running them, and applying the same self-auditing statistical "
-     "methodology demonstrated in Section 2.2 to validate (not just report) each candidate result."),
+    ("Month 1 &mdash; QPU access.", "Validate the fix on real IBM hardware at the 55 decisive geometries "
+     "(17 HF, 20 LiH, 18 BH), evaluating already-converged simulation parameters once per geometry (no "
+     "on-hardware re-optimization). The measurement cost is computed, not guessed: each molecule's "
+     "Jordan-Wigner-mapped 10-qubit Hamiltonian (276 Pauli terms) groups into 58 qubit-wise-commuting "
+     "circuits, giving a bottom-up budget of &sim;6.4&times;10<super>6</super>&ndash;1.3&times;10<super>7</super> "
+     "shots at 2,000&ndash;4,000 shots/circuit. <i>Success criterion:</i> hardware energies agree with "
+     "simulation to within chemical accuracy (1.6 mHa) at a majority of geometries, with any systematic "
+     "deviation characterized and reported."),
+    ("Month 2 &mdash; cloud compute.", "Test generalization two ways: three new molecules with qualitatively "
+     "different bonding (H<sub>2</sub>O, NH<sub>3</sub>, CO) in the same tractable qubit range, and one "
+     "existing molecule re-run in an extended basis (6-31G vs. STO-3G). In parallel, target BH's residual "
+     "gap (Section 3.2) with a small feedforward neural correction (1&ndash;2 hidden layers, "
+     "O(10<super>2</super>) parameters) in the style of Li et al., trained on BH's existing 18-geometry "
+     "dataset. <i>Success criterion:</i> the fix's benefit replicates on at least one new molecule/basis, "
+     "and the correction narrows BH's gap beyond its current 446&times; best case."),
+    ("Month 3 &mdash; AI-agent-orchestrated search.", "Rather than hand-selecting excitation operators, use "
+     "AI-agent-driven search over the untried space &mdash; generalized (non-paired) doubles and higher-order "
+     "singles &mdash; targeted at BH's largest-residual geometries. Every candidate is run through the "
+     "identical audit already validated on the original fix (matched-baseline comparison, twelve-restart "
+     "consistency check, autocorrelation-corrected statistics from Section 2.2), so a candidate is reported "
+     "as real only after surviving the same scrutiny the original result did."),
 ]
 items = []
 for head, body in bullets:
@@ -210,11 +222,12 @@ story.append(ListFlowable(items, bulletType="bullet", leftIndent=14, spaceBefore
 
 story.append(Paragraph("5. Why this is a low-execution-risk proposal", styles["H1"]))
 story.append(Paragraph(
-    "This is not a cold-start proposal. The pipeline, the hardware-execution strategy, the statistical "
-    "methodology, and the diagnostic tooling all already exist and are already validated &mdash; the 3-month "
-    "plan extends a demonstrated, working process rather than building one from scratch. All code, run "
-    "scripts, raw results, and figures referenced in this document are public: "
-    "<font face=\"Courier\">github.com/1shaanSr/vqe-ansatz-expressibility</font>.",
+    "This is not a cold-start proposal. The pipeline, the statistical methodology, and the diagnostic "
+    "tooling all already exist and are already validated in simulation &mdash; only the hardware-execution "
+    "step itself (Month 1) is new. The 3-month plan extends a demonstrated, working process rather than "
+    "building one from scratch. All code, run scripts, raw results, and figures referenced in this "
+    "document are public: "
+    "<font face=\"Courier\">https://github.com/1shaanSr/vqe-ansatz-expressibility</font>.",
     styles["Body"]))
 
 doc = SimpleDocTemplate(OUT, pagesize=letter, topMargin=0.75*inch, bottomMargin=0.75*inch,
